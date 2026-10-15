@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.venv/
+__pycache__/
+*.db
+*.db.wal
+*.duckdb
+*.duckdb.wal
+briefing/output/*-slides/

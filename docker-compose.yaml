@@ -1,0 +1,26 @@
+name: puppygraph-bank-demo
+
+services:
+  puppygraph:
+    image: puppygraph/puppygraph:1.15.0
+    environment:
+      PUPPYGRAPH_USERNAME: puppygraph
+      PUPPYGRAPH_PASSWORD: puppygraph123
+      QUERY_TIMEOUT: 5m
+      STORAGE_PATH_ROOT: /data/storage
+      # Keep users and saved AI keys across container re-creation.
+      CONTROLPLANE_REGISTRY_STORAGEPATH: /data/storage/registry.db
+    ports:
+      - "127.0.0.1:8081:8081"
+      - "127.0.0.1:8182:8182"
+      - "127.0.0.1:7687:7687"
+    volumes:
+      - type: bind
+        source: ./data/bank_demo.db
+        target: /home/share/bank_demo.db
+        bind:
+          create_host_path: false
+      - puppygraph-storage:/data/storage
+
+volumes:
+  puppygraph-storage:

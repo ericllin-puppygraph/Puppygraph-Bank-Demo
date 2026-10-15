@@ -1,0 +1,1393 @@
+{
+  "catalog": [
+    {
+      "name": "duckdb_data",
+      "type": "duckdb",
+      "jdbc": {
+        "jdbcUri": "jdbc:duckdb:/home/share/bank_demo.db",
+        "driverClass": "org.duckdb.DuckDBDriver",
+        "driverUrl": "https://repo.maven.apache.org/maven2/org/duckdb/duckdb_jdbc/1.4.3.0/duckdb_jdbc-1.4.3.0.jar"
+      }
+    }
+  ],
+  "node": [
+    {
+      "label": "Person",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "person",
+          "mappedField": [
+            {
+              "sourceFieldName": "person_id",
+              "targetFieldName": "person_id"
+            },
+            {
+              "sourceFieldName": "person_name",
+              "targetFieldName": "person_name"
+            },
+            {
+              "sourceFieldName": "is_blocked",
+              "targetFieldName": "is_blocked"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "gender",
+              "targetFieldName": "gender"
+            },
+            {
+              "sourceFieldName": "birthday",
+              "targetFieldName": "birthday"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "person_id",
+          "type": "LONG"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "person_id",
+          "type": "LONG"
+        },
+        {
+          "name": "person_name",
+          "type": "STRING"
+        },
+        {
+          "name": "is_blocked",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "gender",
+          "type": "STRING"
+        },
+        {
+          "name": "birthday",
+          "type": "DATE"
+        },
+        {
+          "name": "country",
+          "type": "STRING"
+        },
+        {
+          "name": "city",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "label": "Company",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "company",
+          "mappedField": [
+            {
+              "sourceFieldName": "company_id",
+              "targetFieldName": "company_id"
+            },
+            {
+              "sourceFieldName": "company_name",
+              "targetFieldName": "company_name"
+            },
+            {
+              "sourceFieldName": "is_blocked",
+              "targetFieldName": "is_blocked"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "country",
+              "targetFieldName": "country"
+            },
+            {
+              "sourceFieldName": "city",
+              "targetFieldName": "city"
+            },
+            {
+              "sourceFieldName": "business",
+              "targetFieldName": "business"
+            },
+            {
+              "sourceFieldName": "url",
+              "targetFieldName": "url"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "company_id",
+          "type": "LONG"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "company_name",
+          "type": "STRING"
+        },
+        {
+          "name": "is_blocked",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "country",
+          "type": "STRING"
+        },
+        {
+          "name": "city",
+          "type": "STRING"
+        },
+        {
+          "name": "business",
+          "type": "STRING"
+        },
+        {
+          "name": "url",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "label": "Account",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "account",
+          "mappedField": [
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "is_blocked",
+              "targetFieldName": "is_blocked"
+            },
+            {
+              "sourceFieldName": "account_type",
+              "targetFieldName": "account_type"
+            },
+            {
+              "sourceFieldName": "nickname",
+              "targetFieldName": "nickname"
+            },
+            {
+              "sourceFieldName": "freq_login_type",
+              "targetFieldName": "freq_login_type"
+            },
+            {
+              "sourceFieldName": "last_login_time",
+              "targetFieldName": "last_login_time"
+            },
+            {
+              "sourceFieldName": "account_level",
+              "targetFieldName": "account_level"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "account_id",
+          "type": "LONG"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "is_blocked",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "account_type",
+          "type": "STRING"
+        },
+        {
+          "name": "nickname",
+          "type": "STRING"
+        },
+        {
+          "name": "freq_login_type",
+          "type": "STRING"
+        },
+        {
+          "name": "last_login_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "account_level",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "label": "Loan",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "loan_id",
+              "targetFieldName": "loan_id"
+            },
+            {
+              "sourceFieldName": "loan_amount",
+              "targetFieldName": "loan_amount"
+            },
+            {
+              "sourceFieldName": "balance",
+              "targetFieldName": "balance"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "loan_usage",
+              "targetFieldName": "loan_usage"
+            },
+            {
+              "sourceFieldName": "interest_rate",
+              "targetFieldName": "interest_rate"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        },
+        {
+          "name": "loan_amount",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "balance",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "loan_usage",
+          "type": "STRING"
+        },
+        {
+          "name": "interest_rate",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "label": "Medium",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "medium",
+          "mappedField": [
+            {
+              "sourceFieldName": "medium_id",
+              "targetFieldName": "medium_id"
+            },
+            {
+              "sourceFieldName": "medium_type",
+              "targetFieldName": "medium_type"
+            },
+            {
+              "sourceFieldName": "is_blocked",
+              "targetFieldName": "is_blocked"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "last_login_time",
+              "targetFieldName": "last_login_time"
+            },
+            {
+              "sourceFieldName": "risk_level",
+              "targetFieldName": "risk_level"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "medium_id",
+          "type": "LONG"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "medium_id",
+          "type": "LONG"
+        },
+        {
+          "name": "medium_type",
+          "type": "STRING"
+        },
+        {
+          "name": "is_blocked",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "last_login_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "risk_level",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "edge": [
+    {
+      "label": "PERSON_OWNS_ACCOUNT",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "person_own_account",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "person_id",
+              "targetFieldName": "person_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "person_id",
+          "type": "LONG"
+        },
+        {
+          "name": "account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        }
+      ],
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Account",
+      "fromKey": [
+        {
+          "name": "person_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "account_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "COMPANY_OWNS_ACCOUNT",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "company_own_account",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "company_id",
+              "targetFieldName": "company_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        }
+      ],
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Account",
+      "fromKey": [
+        {
+          "name": "company_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "account_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "ACCOUNT_TRANSFERS_ACCOUNT",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "account_transfer",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "from_account_id",
+              "targetFieldName": "from_account_id"
+            },
+            {
+              "sourceFieldName": "to_account_id",
+              "targetFieldName": "to_account_id"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "order_num",
+              "targetFieldName": "order_num"
+            },
+            {
+              "sourceFieldName": "pay_type",
+              "targetFieldName": "pay_type"
+            },
+            {
+              "sourceFieldName": "goods_type",
+              "targetFieldName": "goods_type"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "from_account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "to_account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "amount",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "order_num",
+          "type": "STRING"
+        },
+        {
+          "name": "pay_type",
+          "type": "STRING"
+        },
+        {
+          "name": "goods_type",
+          "type": "STRING"
+        }
+      ],
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Account",
+      "fromKey": [
+        {
+          "name": "from_account_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_account_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "ACCOUNT_WITHDRAWS_ACCOUNT",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "account_withdraw",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "from_account_id",
+              "targetFieldName": "from_account_id"
+            },
+            {
+              "sourceFieldName": "to_account_id",
+              "targetFieldName": "to_account_id"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "from_account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "to_account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "amount",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        }
+      ],
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Account",
+      "fromKey": [
+        {
+          "name": "from_account_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "to_account_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "ACCOUNT_REPAYS_LOAN",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "account_repay_loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "loan_id",
+              "targetFieldName": "loan_id"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        },
+        {
+          "name": "amount",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        }
+      ],
+      "fromNodeLabel": "Account",
+      "toNodeLabel": "Loan",
+      "fromKey": [
+        {
+          "name": "account_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "LOAN_DEPOSITS_ACCOUNT",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "loan_deposit_account",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "loan_id",
+              "targetFieldName": "loan_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "amount",
+              "targetFieldName": "amount"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        },
+        {
+          "name": "account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "amount",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        }
+      ],
+      "fromNodeLabel": "Loan",
+      "toNodeLabel": "Account",
+      "fromKey": [
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "account_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "PERSON_APPLIES_LOAN",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "person_apply_loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "person_id",
+              "targetFieldName": "person_id"
+            },
+            {
+              "sourceFieldName": "loan_id",
+              "targetFieldName": "loan_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "lender",
+              "targetFieldName": "lender"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "person_id",
+          "type": "LONG"
+        },
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "lender",
+          "type": "STRING"
+        }
+      ],
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Loan",
+      "fromKey": [
+        {
+          "name": "person_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "COMPANY_APPLIES_LOAN",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "company_apply_loan",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "company_id",
+              "targetFieldName": "company_id"
+            },
+            {
+              "sourceFieldName": "loan_id",
+              "targetFieldName": "loan_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "lender",
+              "targetFieldName": "lender"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "lender",
+          "type": "STRING"
+        }
+      ],
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Loan",
+      "fromKey": [
+        {
+          "name": "company_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "loan_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "PERSON_GUARANTEES_PERSON",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "person_guarantee_person",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "guarantor_person_id",
+              "targetFieldName": "guarantor_person_id"
+            },
+            {
+              "sourceFieldName": "guaranteed_person_id",
+              "targetFieldName": "guaranteed_person_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "guarantor_person_id",
+          "type": "LONG"
+        },
+        {
+          "name": "guaranteed_person_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "relation",
+          "type": "STRING"
+        }
+      ],
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Person",
+      "fromKey": [
+        {
+          "name": "guarantor_person_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "guaranteed_person_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "COMPANY_GUARANTEES_COMPANY",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "company_guarantee_company",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "guarantor_company_id",
+              "targetFieldName": "guarantor_company_id"
+            },
+            {
+              "sourceFieldName": "guaranteed_company_id",
+              "targetFieldName": "guaranteed_company_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "relation",
+              "targetFieldName": "relation"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "guarantor_company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "guaranteed_company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "relation",
+          "type": "STRING"
+        }
+      ],
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Company",
+      "fromKey": [
+        {
+          "name": "guarantor_company_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "guaranteed_company_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "PERSON_INVESTS_COMPANY",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "person_invest_company",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "investor_person_id",
+              "targetFieldName": "investor_person_id"
+            },
+            {
+              "sourceFieldName": "company_id",
+              "targetFieldName": "company_id"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "investor_person_id",
+          "type": "LONG"
+        },
+        {
+          "name": "company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "ratio",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        }
+      ],
+      "fromNodeLabel": "Person",
+      "toNodeLabel": "Company",
+      "fromKey": [
+        {
+          "name": "investor_person_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "company_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "COMPANY_INVESTS_COMPANY",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "company_invest_company",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "investor_company_id",
+              "targetFieldName": "investor_company_id"
+            },
+            {
+              "sourceFieldName": "company_id",
+              "targetFieldName": "company_id"
+            },
+            {
+              "sourceFieldName": "ratio",
+              "targetFieldName": "ratio"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "investor_company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "company_id",
+          "type": "LONG"
+        },
+        {
+          "name": "ratio",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        }
+      ],
+      "fromNodeLabel": "Company",
+      "toNodeLabel": "Company",
+      "fromKey": [
+        {
+          "name": "investor_company_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "company_id",
+          "type": "LONG"
+        }
+      ]
+    },
+    {
+      "label": "MEDIUM_SIGNS_IN_ACCOUNT",
+      "dataSourceGroup": {
+        "externalDataSource": {
+          "enabled": true,
+          "catalog": "duckdb_data",
+          "schema": "bank",
+          "table": "medium_sign_in_account",
+          "mappedField": [
+            {
+              "sourceFieldName": "edge_id",
+              "targetFieldName": "edge_id"
+            },
+            {
+              "sourceFieldName": "medium_id",
+              "targetFieldName": "medium_id"
+            },
+            {
+              "sourceFieldName": "account_id",
+              "targetFieldName": "account_id"
+            },
+            {
+              "sourceFieldName": "create_time",
+              "targetFieldName": "create_time"
+            },
+            {
+              "sourceFieldName": "location",
+              "targetFieldName": "location"
+            }
+          ]
+        }
+      },
+      "id": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        }
+      ],
+      "attribute": [
+        {
+          "name": "edge_id",
+          "type": "STRING"
+        },
+        {
+          "name": "medium_id",
+          "type": "LONG"
+        },
+        {
+          "name": "account_id",
+          "type": "LONG"
+        },
+        {
+          "name": "create_time",
+          "type": "DATETIME"
+        },
+        {
+          "name": "location",
+          "type": "STRING"
+        }
+      ],
+      "fromNodeLabel": "Medium",
+      "toNodeLabel": "Account",
+      "fromKey": [
+        {
+          "name": "medium_id",
+          "type": "LONG"
+        }
+      ],
+      "toKey": [
+        {
+          "name": "account_id",
+          "type": "LONG"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "catalog": [
+    {
+      "name": "duckdb_data",
+      "type": "duckdb",
+      "jdbc": {
+        "jdbcUri": "jdbc:duckdb:/home/share/bank_demo.db",
+        "driverClass": "org.duckdb.DuckDBDriver",
+        "driverUrl": "https://repo.maven.apache.org/maven2/org/duckdb/duckdb_jdbc/1.4.3.0/duckdb_jdbc-1.4.3.0.jar"
+      }
+    }
+  ]
+}
